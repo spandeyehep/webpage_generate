@@ -11,6 +11,10 @@ print(options)
 directory_path=options.directory
 execute=options.execute
 #sys.exit()
+
+#Specify path where you cloned the repository
+base_dir='/u/dm/pande230/public_html/generatePlotsBase/'
+
 def create_empty_files(directory):
     # Save current working directory
     original_directory = os.getcwd()
@@ -24,7 +28,7 @@ def create_empty_files(directory):
         # For root directory
         dir_path = directory
         print(dir_path)
-        cmd = "cp -r /u/dm/pande230/public_html/generatePlotsBase/* %s/"%(dir_path)
+        cmd = "cp -r %s/* %s/"%(base_dir, dir_path)
         if(not execute):
             print(cmd)
         else:
@@ -53,7 +57,7 @@ def create_empty_files(directory):
                 
                 dir_path = os.path.join(root, dir_name)
                 print(dir_path)
-                cmd = "cp -r /u/dm/pande230/public_html/generatePlotsBase/* %s/"%(dir_path)
+                cmd = "cp -r %s/* %s/"%(base_dir,dir_path)
                 if(not execute):
                     print(cmd)
                 else:
