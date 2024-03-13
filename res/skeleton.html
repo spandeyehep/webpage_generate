@@ -1,0 +1,55 @@
+<html>
+
+<link rel="stylesheet" type="text/css" href="./res/theme.css" />
+<link rel="stylesheet" type="text/css" href="./res/style.css" />
+<script language="javascript" type="text/javascript" src="./res/jquery.js" ></script>
+<script language="javascript" type="text/javascript" src="./res/jquery-ui.js" ></script>
+<script language="javascript" type="text/javascript" src="./res/style.js" ></script>
+<script language="javascript" type="text/javascript">
+$(function() {
+          $(".numbers-row").append('<span class="button">+</span>&nbsp;&nbsp;<span class="button">-</span>');
+          $(".button").click( function() {
+
+                                  var $button = $(this);
+                                  var oldValue = $button.parent().find("input").val();
+
+                                  if ($button.text() == "+") {
+                                          var newVal = parseFloat(oldValue) + 1;
+                                  } else {
+                                          // Don't allow decrementing below zero
+                                          if (oldValue > 0) {
+                                                  var newVal = parseFloat(oldValue) - 1;
+                                          } else {
+                                                  newVal = 0;
+                                          }
+                                  }
+
+                                  $button.parent().find("input").val(newVal);
+                                  $button.parent().parent().find("input").click();
+
+                          });
+});
+</script>
+
+<head>
+
+</head>
+
+<body>
+
+<h2>
+<a href="../">[parent]</a>
+</h2>
+
+
+<div id="piccont">
+
+<!-- <div class='pic'><h3><a href="overlay_gamma_190.png">overlay_gamma_190.png</a></h3><img src="overlay_gamma_190.png" style="border: none; width: 40ex; "><p>Also as [none]</p></div>  -->
+
+
+</div>
+
+
+
+</body>
+</html>
